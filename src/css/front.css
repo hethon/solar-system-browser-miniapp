@@ -1,0 +1,131 @@
+:root {
+  user-select: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.space > canvas {
+  filter: blur(0px);
+  transform: scale(1);
+}
+
+#planet-container {
+  --gap: min(3vw, 3vh);
+  --width: calc((min(90vw, 90vh) - 2.8*var(--gap))/3.8);
+  --shift-index: calc(0.4 * (var(--width) + var(--gap)));
+
+  display: grid;
+  grid-template-columns: repeat(3, var(--width));
+  grid-template-rows: repeat(3, var(--width));
+  grid-gap: var(--gap);
+  justify-content: center;
+  font-family: 'Baloo Chettan 2', cursive;
+}
+
+.planet {
+  width: var(--width);
+  height: var(--width);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: bold;
+  text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.4), 1px -1px 0 rgba(255, 255, 255, 1);
+  transition: all 0.3s ease-in-out;
+}
+
+.planet:hover {
+  cursor: pointer;
+  color: #fff;
+}
+
+/* .planet.active:not(.sun, .venus, .mars, .saturn, .neptune) {
+  transform: scale(1.2);
+} */
+
+.planet.active {
+  color: #fff;
+}
+
+.mercury {
+  --color: rgb(169, 152, 120);
+  background-color: var(--color);
+  color: var(--color);
+}
+
+.venus {
+  --color: rgb(224, 185, 117);
+  background-color: var(--color);
+  color: var(--color);
+  transform: translateY(calc(-1 * var(--shift-index)));
+}
+
+/* .venus.active {
+  transform: translateY(calc(-1 * var(--shift-index))) scale(1.2);
+} */
+
+.earth {
+  --color: rgb(78, 123, 178);
+  background-color: var(--color);
+  color: var(--color);
+}
+
+.neptune {
+  --color: rgb(92, 127, 194);
+  background-color: var(--color);
+  color: var(--color);
+  transform: translateX(calc(-1 * var(--shift-index)));
+}
+
+/* .neptune.active {
+  transform: translateX(calc(-1 * var(--shift-index))) scale(1.2);
+} */
+
+.mars {
+  --color: rgb(209, 102, 102);
+  background-color: var(--color);
+  color: var(--color);
+  transform: translateX(var(--shift-index));
+}
+
+/* .mars.active {
+  transform: translateX(var(--shift-index)) scale(1.2);
+} */
+
+.uranus {
+  --color: rgb(159, 216, 224);
+  background-color: var(--color);
+  color: var(--color);
+}
+
+.saturn {
+  --color: rgb(226, 204, 155);;
+  background-color: var(--color);
+  color: var(--color);
+  transform: translateY(var(--shift-index));
+}
+
+/* .saturn.active {
+  transform: translateY(var(--shift-index)) scale(1.2);
+} */
+
+.jupiter {
+  --color: rgb(180, 143, 104);
+  background-color: var(--color);
+  color: var(--color);
+}
+
+.sun {
+  --color: rgb(243, 156, 18);
+  background-color: var(--color);
+  color: var(--color);
+  transform: scale(1.3);
+}
+

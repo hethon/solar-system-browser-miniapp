@@ -1,0 +1,154 @@
+<main>
+  <div class="title">
+    {{planet['name'].capitalize()}}
+    <span class="bar">|</span>
+    <span class="themed">{{planet['ethiopic_name']}}</span>
+  </div>
+
+  <div class="banner">
+    <div class="banner-img">
+      <img src="{{planet['banner_image_url']}}" alt="image of {{planet['name']}}">
+    </div>
+  </div>
+
+  <div class="card intro">
+    {% for part in planet['intro'] -%}
+    <p>{{part}}</p>
+    {% endfor -%}
+  </div>
+
+  {% if planet.get('stats') -%}
+  <div class="card">
+    <div class="card-header">
+      <div class="header">Stats</div>
+      <i class="icon fas fa-chart-bar"></i>
+    </div>
+    <div class="content">
+      {% for key in planet['stats'] -%}
+      <p>
+        <span class="themed">{{key}}:</span>
+        {{planet['stats'][key]}}
+      </p>
+      {% endfor-%}
+    </div>
+  </div>
+  {% endif -%}
+
+  {% if planet.get('features') -%}
+  <div class="card">
+    <div class="card-header">
+      <div class="header">Features</div>
+      <i class="icon fas fa-mountain"></i>
+    </div>
+    <div class="content">
+      {% for part in planet['features'] -%}
+      <p>{{part}}</p>
+      {% endfor -%}
+    </div>
+  </div>
+  {% endif -%}
+
+  {% if planet.get('moons') -%}
+  <div class="card">
+    <div class="card-header">
+      <div class="header">Moons</div>
+      <i class="icon fas fa-moon"></i>
+    </div>
+    <div class="content">
+      <p>{{planet['moons']['general']}}</p>
+      <div>
+        {% for moon_name in planet['moons']['content']-%}
+        <p>
+          <span class="themed">{{moon_name}}:</span>
+          {{planet['moons']['content'][moon_name]}}
+        </p>
+        {% endfor -%}
+      </div>
+    </div>
+  </div>
+  {% endif -%}
+
+  {% if planet.get('exploration') -%}
+  <div class="card">
+    <div class="card-header">
+      <div class="header">Explorations</div>
+      <i class="icon fas fa-satellite"></i>
+    </div>
+    <div class="content">
+      <p>{{planet['exploration']['general']}}</p>
+      <div>
+        {% for date in planet['exploration']['content']-%}
+        <p>
+          <span class="themed">{{date}}:</span>
+          {{planet['exploration']['content'][date]}}
+        </p>
+        {% endfor -%}
+      </div>
+    </div>
+  </div>
+  {% endif -%}
+
+  {% if planet.get('life') -%}
+  <div class="card">
+    <div class="card-header">
+      <div class="header">Potential for Life</div>
+      <i class="icon fas fa-leaf"></i>
+    </div>
+    <div class="content">
+      {% for part in planet['life'] -%}
+      <p>{{part}}</p>
+      {% endfor -%}
+    </div>
+  </div>
+  {% endif -%}
+
+  {% if planet.get('fun_fact') -%}
+  <div class="card">
+    <div class="card-header">
+      <div class="header">Fun Facts</div>
+      <i class="icon fas fa-smile"></i>
+    </div>
+    <div class="content">
+      {% for part in planet['fun_fact'] -%}
+      <p>{{part}}</p>
+      {% endfor -%}
+    </div>
+  </div>
+  {% endif-%}
+
+  {% if planet.get('images') -%}
+
+  <div class="card">
+    <div class="card-header">
+      <div class="header">Real Photos</div>
+      <i class="icon fas fa-camera-retro"></i>
+    </div>
+    <div class="images">
+      {% for i, image in enumerate(planet['images']) -%}
+      <div class="image">
+        <a href="#img-{{i}}" class="modal-link">
+          <img src="{{image['url']}}">
+        </a>
+
+        <div onclick="location.hash='#/'" id="img-{{i}}" class="modal-container">
+          <div class="modal-content">
+            <a href="#/" class="close-button">&times;</a>
+            <img src="{{image['url']}}" class="modal-image">
+            <div class="modal-caption">
+              <div class="modal-description">{{image['description']}}</div>
+              <div class="modal-credit">&copy;{{image['credit']}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor -%}
+    </div>
+  </div>
+  {% endif-%}
+
+  <div class="card wrapup">
+    {% for part in planet['wrapup'] -%}
+    <p>{{part}}</p>
+    {% endfor -%}
+  </div>
+</main>
