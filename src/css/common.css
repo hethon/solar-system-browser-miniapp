@@ -10,14 +10,28 @@ body {
   font-family: monospace;
 }
 
+.loading-placeholder {
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 100vh;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
 .space {
+  background-color: #000;
   width: 100vw;
   height: 100vh;
   position: fixed;
   z-index: -1;
-  background-color: #000;
+}
+
+.space > canvas {
+  transition: transform 0.5s linear;
 }
 
 .container {
-  transition: opacity 0.5s linear;
+  transition: opacity 0.5s ease-in-out;
 }

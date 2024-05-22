@@ -6,7 +6,7 @@
   background-color: rgba(var(--selected-planet-color-tuple), 0.5);
 }
 
-.space > canvas {
+.static.space > canvas {
   filter: blur(2px);
   transform: scale(1.1);
 }

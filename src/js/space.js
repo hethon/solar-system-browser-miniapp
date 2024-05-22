@@ -90,6 +90,7 @@ export let space = {
     if (!space.AnimationRequestId) {
       space.AnimationRequestId = window.requestAnimationFrame(space.animation);
     }
+    document.querySelector(".space").classList.remove("static");
   },
 
   stopAnimation() {
@@ -97,5 +98,6 @@ export let space = {
       window.cancelAnimationFrame(space.AnimationRequestId);
       space.AnimationRequestId = undefined;
     }
+    document.querySelector(".space").classList.add("static");
   },
 };

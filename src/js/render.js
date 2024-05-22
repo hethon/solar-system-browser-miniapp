@@ -5,15 +5,37 @@ export function renderView(viewName, style, oncomplete) {
     document.querySelector("#style").href = `./css/${style}.css`;
   }
 
-  let viewUrl = `views/${viewName}.html`;
-  fetchView(viewUrl)
+  let container = document.querySelector(".container");
+  container.style.visibility = "hidden";
+
+  const loadingPlaceholder = document.querySelector(".loading-placeholder");
+  loadingPlaceholder.style.display = "block";
+
+  fetchView(`views/${viewName}.html`)
     .then((view) => {
-      let container = document.querySelector(".container");
-      container.innerHTML = view;
+      const fragment = document.createRange().createContextualFragment(view);
+      const images = fragment.querySelectorAll("img");
+      const imagePromises = [];
+      for (let img of images) {
+        imagePromises.push(
+          new Promise((resolve, reject) => {
+            img.onload = resolve;
+            img.onerror = resolve; // Consider image load even if there's an error
+          })
+        );
+      }
+
+      return Promise.all(imagePromises).then(() => fragment);
+    })
+    .then((fragment) => {
+      container.innerHTML = "";
+      container.appendChild(fragment);
     })
     .then(() => {
       if (oncomplete) {
         oncomplete();
       }
+      loadingPlaceholder.style.display = "none";
+      container.style.visibility = "visible";
     });
 }

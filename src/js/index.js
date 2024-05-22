@@ -15,3 +15,8 @@ window.space = space;
 window.planets = planets;
 window.miniapp = miniapp;
 window.renderView = renderView;
+
+let container = document.querySelector(".container");
+container.addEventListener("DOMContentLoaded", function () {
+    console.error("container loaded");
+});

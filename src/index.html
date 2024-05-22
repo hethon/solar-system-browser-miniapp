@@ -12,12 +12,13 @@
     href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@700&display=swap">
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/front.css" id="style">
-  <!-- <link rel="stylesheet" href="./css/fordebugging.css"> -->
+  <link rel="stylesheet" href="./css/fordebugging.css">
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <title>Solar System Browser</title>
 </head>
 
 <body>
+  <div class="loading-placeholder">Loading...</div>
   <div class="space">
     <canvas></canvas>
   </div>
@@ -26,9 +27,9 @@
   
   <script src="./js/index.js" type="module"></script>
   
-  <!-- <div class="back-btn">Back</div>
-  <div class="main-btn">Let's go!</div> -->
-  <!-- <script>
+  <div class="back-btn">Back</div>
+  <div class="main-btn">Let's go!</div>
+  <script>
     // uncomment this for debugging
     document.querySelector('.main-btn').addEventListener('click', () => {
       renderView(planets.activeplanetName, "detail");
@@ -39,7 +40,7 @@
       miniapp.frontPage();
       window.removeEventListener("scroll", space.update);
     });
-  </script> -->
+  </script>
 </body>
 
 </html>
