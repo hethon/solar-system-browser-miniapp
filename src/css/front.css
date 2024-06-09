@@ -51,13 +51,15 @@ body {
 }
 
 .mercury {
-  --color: rgb(169, 152, 120);
+  --color: rgb(104, 105, 109);
+  background-image: linear-gradient(-45deg, #68696d, #b1adad);
   background-color: var(--color);
   color: var(--color);
 }
 
 .venus {
-  --color: rgb(224, 185, 117);
+  --color: rgb(173, 141, 84);
+  background-image: linear-gradient(-45deg, #ad8d54, #eecb8b);
   background-color: var(--color);
   color: var(--color);
   transform: translateY(calc(-1 * var(--shift-index)));
@@ -68,13 +70,15 @@ body {
 } */
 
 .earth {
-  --color: rgb(78, 123, 178);
+  --color: rgb(107, 147, 214);
+  background-image: linear-gradient(-45deg, #4f4cb0, #6b93d6, #e9eff9);
   background-color: var(--color);
   color: var(--color);
 }
 
 .neptune {
-  --color: rgb(92, 127, 194);
+  --color: rgb(71, 126, 253);
+  background-image: linear-gradient(-45deg, #1f2255, #477efd);
   background-color: var(--color);
   color: var(--color);
   transform: translateX(calc(-1 * var(--shift-index)));
@@ -85,7 +89,8 @@ body {
 } */
 
 .mars {
-  --color: rgb(209, 102, 102);
+  --color: rgb(176, 127, 106);
+  background-image: linear-gradient(-45deg, #b07f6a, #725641);
   background-color: var(--color);
   color: var(--color);
   transform: translateX(var(--shift-index));
@@ -96,13 +101,15 @@ body {
 } */
 
 .uranus {
-  --color: rgb(159, 216, 224);
+  --color: rgb(147, 205, 241);
+  background-image: linear-gradient(-45deg, #2e84ce, #93cdf1);
   background-color: var(--color);
   color: var(--color);
 }
 
 .saturn {
-  --color: rgb(226, 204, 155);;
+  --color: rgb(195, 146, 79);
+  background-image: linear-gradient(-45deg, #c3924f, #eddbad);
   background-color: var(--color);
   color: var(--color);
   transform: translateY(var(--shift-index));
@@ -114,12 +121,14 @@ body {
 
 .jupiter {
   --color: rgb(180, 143, 104);
+  background-image: linear-gradient(-45deg, #b48f68, #d46838);
   background-color: var(--color);
   color: var(--color);
 }
 
 .sun {
-  --color: rgb(243, 156, 18);
+  --color: rgb(254, 95, 0);
+  background-image: linear-gradient(-45deg, red, #fda600);
   background-color: var(--color);
   color: var(--color);
   transform: scale(1.3);
