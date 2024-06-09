@@ -11,13 +11,23 @@ body {
 }
 
 .loading-placeholder {
-  color: #fff;
-  font-size: 1.5rem;
-  text-align: center;
-  line-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
-  width: 100vw;
   height: 100vh;
+  width: 100vw;
+  z-index: 100;
+  pointer-events: none;
+}
+
+tgs-player {
+  width: min(40vw, 40vh);
+}
+
+.loading-placeholder {
+  visibility: hidden;
+  /* transition: visibility 0.5s ease-in-out; */
 }
 
 .space {
@@ -33,5 +43,5 @@ body {
 }
 
 .container {
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in;
 }

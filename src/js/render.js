@@ -6,10 +6,12 @@ export function renderView(viewName, style, oncomplete) {
   }
 
   let container = document.querySelector(".container");
-  container.style.visibility = "hidden";
-
   const loadingPlaceholder = document.querySelector(".loading-placeholder");
-  loadingPlaceholder.style.display = "block";
+  
+  
+  loadingPlaceholder.style.visibility = "visible";
+  container.style.visibility = "hidden";
+  container.style.opacity = "0";
 
   fetchView(`views/${viewName}.html`)
     .then((view) => {
@@ -35,7 +37,10 @@ export function renderView(viewName, style, oncomplete) {
       if (oncomplete) {
         oncomplete();
       }
-      loadingPlaceholder.style.display = "none";
+
+      
       container.style.visibility = "visible";
+      container.style.opacity = "1";
+      loadingPlaceholder.style.visibility = "hidden";
     });
 }
