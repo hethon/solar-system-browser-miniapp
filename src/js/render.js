@@ -37,9 +37,8 @@ export function renderView(viewName, style, oncomplete) {
       if (oncomplete) {
         oncomplete();
       }
-
+      container.style.visibility = "visible";
       setTimeout(() => {
-        container.style.visibility = "visible";
         container.style.opacity = "1";
         loadingPlaceholder.style.visibility = "hidden";
       }, 1500);
