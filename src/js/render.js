@@ -43,6 +43,5 @@ export function renderView(viewName, style, oncomplete) {
         container.style.opacity = "1";
         loadingPlaceholder.style.visibility = "hidden";
       }, 1500);
-      
     });
 }
