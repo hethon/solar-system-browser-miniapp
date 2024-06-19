@@ -38,9 +38,11 @@ export function renderView(viewName, style, oncomplete) {
         oncomplete();
       }
 
+      setTimeout(() => {
+        container.style.visibility = "visible";
+        container.style.opacity = "1";
+        loadingPlaceholder.style.visibility = "hidden";
+      }, 1500);
       
-      container.style.visibility = "visible";
-      container.style.opacity = "1";
-      loadingPlaceholder.style.visibility = "hidden";
     });
 }
