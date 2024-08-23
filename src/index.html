@@ -31,19 +31,19 @@
   
   <script src="./js/index.js" type="module"></script>
   
-  <div class="back-btn">Back</div>
-  <div class="main-btn">Let's go!</div>
+  <!-- <div class="back-btn">Back</div>
+  <div class="main-btn">Let's go!</div> -->
   <script>
     // uncomment this for debugging
-    document.querySelector('.main-btn').addEventListener('click', () => {
-      renderView(planets.activeplanetName, "detail");
-      miniapp.detailPage();
-    });
-    document.querySelector('.back-btn').addEventListener('click', () => {
-      renderView("planets", "front", planets.handlersOn);
-      miniapp.frontPage();
-      window.removeEventListener("scroll", space.update);
-    });
+    // document.querySelector('.main-btn').addEventListener('click', () => {
+    //   renderView(planets.activeplanetName, "detail");
+    //   miniapp.detailPage();
+    // });
+    // document.querySelector('.back-btn').addEventListener('click', () => {
+    //   renderView("planets", "front", planets.handlersOn);
+    //   miniapp.frontPage();
+    //   window.removeEventListener("scroll", space.update);
+    // });
   </script>
 </body>
 
